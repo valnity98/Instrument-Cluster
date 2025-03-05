@@ -17,7 +17,7 @@ MATLAB/Simulink (Vehicle Network Toolbox)
 Mutasem Bader
 
 # License
-This project is open-source under the MIT License.
+This software is proprietary and confidential. Unauthorized copying, distribution, or modification is prohibited.
 
 # Contact
 For questions or contributions, feel free to contact me via GitHub.

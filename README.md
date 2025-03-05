@@ -1,7 +1,7 @@
 # Instrument Cluster CAN Communication
 Simulation of CAN messages via Matlab/Simulink for communication with the instrument cluster
 
-![Instrument Cluster](image/instrument_cluster.png)
+![Instrument Cluster](/Image/instrument_cluster.jpg)
 
 # Project Goals
 * Develop a functional instrument cluster simulation using CAN communication.

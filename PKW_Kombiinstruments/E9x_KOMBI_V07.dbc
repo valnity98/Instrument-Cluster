@@ -1,0 +1,284 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: DDE DSC_CT ACSM CIC FRMFA CAS DKG Kombi JBBF
+
+
+BO_ 170 TORQUE: 8 DDE
+ SG_ ST_IDLG_ENG : 50|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RPM_ENG : 32|16@1+ (0.25,0) [0|16383.75] "" Vector__XXX
+
+BO_ 841 RAW_DATA_TANK: 5 JBBF
+ SG_ ERR_SEN_FLLV_FUTA_RH : 36|4@1+ (1,0) [0|15] ""  Kombi
+ SG_ ERR_SEN_FLLV_FUTA_LH : 32|4@1+ (1,0) [0|15] ""  Kombi
+ SG_ RWDT_SEN_FLLV_FUTA_R : 16|16@1+ (0.1,0) [0|6553.5] ""  Kombi
+ SG_ RWDT_SEN_FLLV_FUTA_L : 0|16@1+ (0.1,0) [0|6553.5] ""  Kombi
+
+BO_ 416 GESCHWINDIGKEIT: 8 DSC_CT
+ SG_ ST_VEH_DVCO : 12|3@1+ (1,0) [0|7] ""  Kombi,JBBF,FRMFA,DSC_CT,DKG,CIC,CAS,ACSM
+ SG_ V_VEH : 0|12@1+ (0.1,0) [0|409.5] ""  Kombi,JBBF,FRMFA,DSC_CT,DKG,CIC,CAS,ACSM
+
+BO_ 762 STAT_SITZBELEGUNG_GURT: 5 ACSM
+ SG_ SW_BLTB_PSR : 30|2@1+ (1,0) [0|3] ""  DSC_CT,DKG,DDE,Kombi,FRMFA,CAS
+ SG_ SW_BLTB_DRR : 28|2@1+ (1,0) [0|3] ""  DSC_CT,DKG,DDE,Kombi,FRMFA,CAS
+
+BO_ 926 BEDIENUNG_UHRZEIT_DATUM: 8 CIC
+ SG_ OP_DISP_CTI_DATE : 56|4@1+ (1,0) [0|15] ""  Kombi
+ SG_ OP_DATE_YR : 40|16@1+ (1,0) [0|65535] ""  Kombi
+ SG_ OP_DATE_MON : 36|4@1+ (1,0) [0|15] ""  Kombi
+ SG_ OP_DATE_DAY : 24|8@1+ (1,0) [0|255] ""  Kombi
+ SG_ OP_SEC : 16|8@1+ (1,0) [0|255] ""  Kombi
+ SG_ OP_HR : 0|8@1+ (1,0) [0|255] ""  Kombi
+ SG_ OP_MN : 8|8@1+ (1,0) [0|255] ""  Kombi
+
+BO_ 502 BLINKEN: 2 FRMFA
+ SG_ ST_IDC_KI : 10|2@1+ (1,0) [0|3] ""  JBBF,Kombi
+ SG_ ST_IDC_STOP : 8|2@1+ (1,0) [0|3] ""  JBBF,Kombi
+ SG_ ST_IDC : 4|3@1+ (1,0) [0|7] ""  JBBF,Kombi
+ SG_ CCLK_IDC : 0|4@1+ (1,0) [0|15] ""  JBBF,Kombi
+
+BO_ 1152 NM_K_CAN: 8 JBBF
+ SG_ NM_PDU_SLP_ACK_KCAN : 13|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_ST_ERR_BUS_KCAN : 24|8@1+ (1,0) [0|255] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_WUP_TYP_IND_KCAN : 16|2@1+ (1,0) [0|3] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_RES_2_KCAN : 15|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_CONF_KCAN : 14|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_SLP_IND_KCAN : 12|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_RES_1_KCAN : 11|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_LMPHM_KCAN : 10|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_RING_KCAN : 9|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_ALIV_KCAN : 8|1@1+ (1,0) [0|1] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+ SG_ NM_PDU_RCVR_KCAN : 0|8@1+ (1,0) [0|255] ""  Kombi,JBBF,FRMFA,CIC,CAS,ACSM
+
+BO_ 304 KLEMMENSTATUS: 5 CAS
+ SG_ ST_KEY_PLGD : 16|2@1+ (1,0) [0|3] ""  DKG,Kombi,JBBF
+ SG_ ST_KL_50 : 4|2@1+ (1,0) [0|3] ""  DKG,Kombi,JBBF
+ SG_ ST_KL_15 : 2|2@1+ (1,0) [0|3] ""  DKG,Kombi,JBBF
+ SG_ ST_KL_R : 0|2@1+ (1,0) [0|3] ""  DKG,Kombi,JBBF
+
+BO_ 466 ANZEIGE_GETRIEBE: 6 DKG
+ SG_ CTR_DISP_PRG_GRB : 32|4@1+ (1,0) [0|15] ""  CAS,Kombi
+ SG_ CTR_DISP_SPMOD_GRB : 26|2@1+ (1,0) [0|3] ""  CAS,Kombi
+ SG_ CTR_DISP_FRM_DRVLG : 44|4@1+ (1,0) [0|15] ""  CAS,Kombi
+ SG_ CTR_DISP_DRVLG : 40|4@1+ (1,0) [0|15] ""  CAS,Kombi
+ SG_ ALIV_COU_EGS : 28|4@1+ (1,0) [0|15] ""  CAS,Kombi
+ SG_ CTR_DISP_GR_GRB : 12|4@1+ (1,0) [0|15] ""  CAS,Kombi
+ SG_ CTR_DISP_PO_GRB_COMP : 4|4@1+ (1,0) [0|15] ""  CAS,Kombi
+ SG_ CTR_DISP_PO_GRB : 0|4@1+ (1,0) [0|15] ""  CAS,Kombi
+
+BO_ 192 ALIVE_ZGM: 2 JBBF
+ SG_ ALIV_COU_ZGM : 0|4@1+ (1,0) [0|15] ""  CAS,Kombi
+
+
+
+EV_ Env_RPM_ENG: 0 [0|65535] "" 0 1 DUMMY_NODE_VECTOR0  DDE;
+
+EV_ Env_ST_IDLG_ENG: 0 [0|3] "" 0 2 DUMMY_NODE_VECTOR0  DDE;
+
+EV_ Env_RWDT_SEN_FLLV_FUTA_L: 0 [0|65535] "" 0 3 DUMMY_NODE_VECTOR0  JBBF;
+
+EV_ Env_RWDT_SEN_FLLV_FUTA_R: 0 [0|65535] "" 0 4 DUMMY_NODE_VECTOR0  JBBF;
+
+EV_ Env_V_VEH: 0 [0|4095] "" 0 5 DUMMY_NODE_VECTOR0  DSC_CT;
+
+EV_ Env_ST_VEH_DVCO: 0 [0|7] "" 0 6 DUMMY_NODE_VECTOR0  DSC_CT;
+
+EV_ Env_SW_BLTB_DRR: 0 [0|3] "" 0 7 DUMMY_NODE_VECTOR0  ACSM;
+
+EV_ Env_SW_BLTB_PSR: 0 [0|3] "" 0 8 DUMMY_NODE_VECTOR0  ACSM;
+
+EV_ Env_ST_IDC_KI: 0 [0|3] "" 0 9 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Env_ST_IDC_STOP: 0 [0|3] "" 0 10 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Env_ST_IDC: 0 [0|7] "" 0 11 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Env_CCLK_IDC: 0 [0|15] "" 0 12 DUMMY_NODE_VECTOR0  FRMFA;
+
+EV_ Env_ST_KEY_PLGD: 0 [0|3] "" 0 13 DUMMY_NODE_VECTOR0  CAS;
+
+EV_ Env_ST_KL_50: 0 [0|3] "" 0 14 DUMMY_NODE_VECTOR0  CAS;
+
+EV_ Env_ST_KL_R: 0 [0|3] "" 0 15 DUMMY_NODE_VECTOR0  CAS;
+
+EV_ Env_ST_KL_15: 0 [0|3] "" 0 16 DUMMY_NODE_VECTOR0  CAS;
+
+EV_ Env_CTR_DISP_FRM_DRVLG: 0 [0|15] "" 0 17 DUMMY_NODE_VECTOR0  DKG;
+
+EV_ Env_CTR_DISP_DRVLG: 0 [0|15] "" 0 18 DUMMY_NODE_VECTOR0  DKG;
+
+EV_ Env_CTR_DISP_PRG_GRB: 0 [0|15] "" 0 19 DUMMY_NODE_VECTOR0  DKG;
+
+EV_ Env_CTR_DISP_SPMOD_GRB: 0 [0|3] "" 0 20 DUMMY_NODE_VECTOR0  DKG;
+
+EV_ Env_CTR_DISP_GR_GRB: 0 [0|15] "" 0 21 DUMMY_NODE_VECTOR0  DKG;
+
+EV_ Env_CTR_DISP_PO_GRB_COMP: 0 [1|15] "" 1 22 DUMMY_NODE_VECTOR0  DKG;
+
+EV_ Env_CTR_DISP_PO_GRB: 0 [0|15] "" 0 23 DUMMY_NODE_VECTOR0  DKG;
+
+CM_ SG_ 304 ST_KEY_PLGD "Status Key Plugged";
+CM_ SG_ 304 ST_KL_50 "Zündschloßstellung ANLASSER";
+CM_ SG_ 304 ST_KL_15 "Zündschloßstellung Klemme 15";
+CM_ SG_ 304 ST_KL_R "Zündschloßstellung RADIO";
+BA_DEF_  "NmMessageCount" INT 1 255;
+BA_DEF_ BU_  "NmStationAddress" HEX 0 248;
+BA_DEF_ BU_  "GenNodSleepTime" INT 0 10000;
+BA_DEF_ SG_  "NWMWakeupAllowed" ENUM  "No","Yes","vector_leerstring";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 10000;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 10000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 10000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 1000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "reserved","cyclic","noMsgSendType ","cyclicIfActive","spontaneous","spontaneousWithDelay","cyclicAndSpontaneous","cyclicAndSpontaneousWD","spontaneousWithRepetition","cyclicIfActiveAndSpontaneousWD","cyclicIfActiveFast","cyclicWithRepeatOnDemand";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 10000;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NmNode" ENUM  "No","Yes";
+BA_DEF_  "NmBaseAddress" HEX 1152 1272;
+BA_DEF_ BO_  "NmMessage" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigCycleTime" INT 0 10000;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 100000;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 100000;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","OnChangeAndIfActive ","OnChangeAndIfActiveWithRepetition","vector_leerstring","vector_leerstring";
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_DEF_  "NmMessageCount" 128;
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "GenNodSleepTime" 0;
+BA_DEF_DEF_  "NWMWakeupAllowed" "No";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "No";
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgSendType" "reserved";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "NmNode" "No";
+BA_DEF_DEF_  "NmBaseAddress" 1152;
+BA_DEF_DEF_  "NmMessage" "No";
+BA_DEF_DEF_  "GenSigCycleTime" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "NodeLayerModules" "oseknm01.dll";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+BA_ "NodeLayerModules" BU_ DDE "";
+BA_ "NodeLayerModules" BU_ DSC_CT "";
+BA_ "NmStationAddress" BU_ ACSM 1;
+BA_ "NmNode" BU_ ACSM 1;
+BA_ "NmStationAddress" BU_ CIC 99;
+BA_ "NmNode" BU_ CIC 1;
+BA_ "NmNode" BU_ FRMFA 1;
+BA_ "NmStationAddress" BU_ FRMFA 114;
+BA_ "NmNode" BU_ CAS 1;
+BA_ "NmStationAddress" BU_ CAS 64;
+BA_ "NodeLayerModules" BU_ DKG "";
+BA_ "NmNode" BU_ Kombi 1;
+BA_ "NmStationAddress" BU_ Kombi 96;
+BA_ "NmNode" BU_ JBBF 1;
+BA_ "NmStationAddress" BU_ JBBF 0;
+BA_ "GenMsgSendType" BO_ 841 1;
+BA_ "GenMsgCycleTime" BO_ 841 200;
+BA_ "GenMsgSendType" BO_ 416 1;
+BA_ "GenMsgCycleTime" BO_ 416 100;
+BA_ "GenMsgDelayTime" BO_ 1152 20;
+BA_ "NmMessage" BO_ 1152 1;
+BA_ "GenMsgCycleTime" BO_ 304 100;
+BA_ "GenMsgDelayTime" BO_ 304 50;
+BA_ "GenMsgSendType" BO_ 304 1;
+BA_ "GenMsgSendType" BO_ 466 1;
+BA_ "GenMsgCycleTime" BO_ 192 200;
+BA_ "GenMsgSendType" BO_ 192 1;
+BA_ "GenSigCycleTime" SG_ 192 ALIV_COU_ZGM 200;
+VAL_ 170 ST_IDLG_ENG 3 "Signal ungültig" 1 "Motor nicht im Leerlauf" 0 "Leerlauf" ;
+VAL_ 841 ERR_SEN_FLLV_FUTA_RH 15 "Signal ungültig" 7 "Wert unterhalb Wertebereich" 6 "Wert unterhalb Wertebereich" 5 "Plausibilitätsfehler" 4 "Plausibilitätsfehler" 3 "Leitungsunterbrechung" 2 "Kurzschluss gegen Ubatt" 1 "Kurzschluss gegen Masse" 0 "Sensor in Ordnung" ;
+VAL_ 841 ERR_SEN_FLLV_FUTA_LH 15 "Signal ungültig" 7 "Wert unterhalb Wertebereich" 6 "Wert unterhalb Wertebereich" 5 "Plausibilitätsfehler" 4 "Plausibilitätsfehler" 3 "Leitungsunterbrechung" 2 "Kurzschluss gegen Ubatt" 1 "Kurzschluss gegen Masse" 0 "Sensor in Ordnung" ;
+VAL_ 416 ST_VEH_DVCO 7 "Signal ungültig" 3 "Fahrzeug fährt " 2 "Fahrzeug fährt rückwärts" 1 "Fahrzeug fährt vorwärts" 0 "Fahrzeug steht" ;
+VAL_ 762 SW_BLTB_PSR 2 "Signal ungültig" 1 "Gurt angelegt" 0 "Gurt nicht angelegt" ;
+VAL_ 762 SW_BLTB_DRR 2 "Signal ungültig" 1 "Gurt angelegt" 0 "Gurt nicht angelegt" ;
+VAL_ 926 OP_DISP_CTI_DATE 15 "Signal ungültig" 13 "UTC-Zeit" 2 "Manuel gestellte Zeit" 1 "Sommerzeit" 0 "Winterzeit" ;
+VAL_ 926 OP_DATE_YR 65535 "Signal ungültig" 65534 "Keine Änderung" ;
+VAL_ 926 OP_DATE_MON 15 "Signal ungültig" 14 "Keine Änderung" 12 "Dez" 11 "Nov" 10 "Okt" 9 "Sep" 8 "Aug" 7 "Juli" 6 "Juni" 5 "Mai" 4 "April" 3 "März" 2 "Feb" 1 "Jan" ;
+VAL_ 926 OP_DATE_DAY 255 "Signal ungültig" 254 "Keine Änderung" ;
+VAL_ 926 OP_SEC 255 "Signal ungültig" 254 "Keine Änderung" ;
+VAL_ 926 OP_HR 255 "Signal ungültig" 254 "Keine Änderung" ;
+VAL_ 926 OP_MN 255 "Signal ungültig" 254 "Keine Änderung" ;
+VAL_ 502 ST_IDC_KI 3 "Signal ungültig" 1 "Blinkkontroll AUS" 0 "Bkontroll signalisieren Bzyklus" ;
+VAL_ 502 ST_IDC_STOP 3 "Signal ungültig" 2 "Neuen Blinktakt starten" 1 "Synchronisation" 0 "Blinktakt läuft weiter" ;
+VAL_ 502 ST_IDC 7 "Signal ungültig" 3 "Beide Blinker EIN" 2 "Blinker rechts EIN" 1 "Blinker links EIN" 0 "Beide Blinker AUS" ;
+VAL_ 502 CCLK_IDC 15 "Signal ungültig" 3 "Doppel-Blink-Impuls" 2 "Defekt-Blinktakt" 1 "Normal-Blinktakt" 0 "Beide Blinker AUS" ;
+VAL_ 1152 NM_PDU_ST_ERR_BUS_KCAN 255 "SIgnal ungültig" ;
+VAL_ 1152 NM_PDU_WUP_TYP_IND_KCAN 3 "Signal ungültig" 2 "Ich wurde geweckt" 1 "Ich habe geweckt" 0 "Unbekannt" ;
+VAL_ 1152 NM_PDU_RCVR_KCAN 255 "Ungültig" ;
+VAL_ 304 ST_KEY_PLGD 3 "Signal ungültig" 2 "Signal unplausibel" 1 "Schlüssel steckt im ZAS" 0 "Kein Schlüssel im ZAS" ;
+VAL_ 304 ST_KL_50 3 "Signal ungültig" 2 "ANLASSER nicht freigegeben" 1 "Klemme 50 EIN" 0 "Klemme 50 AUS" ;
+VAL_ 304 ST_KL_15 3 "Signal ungültig" 2 "Reserviert" 1 "Klemme 15 EIN" 0 "Klemme 15 AUS" ;
+VAL_ 304 ST_KL_R 3 "Signal ungültig" 2 "Reserviert" 1 "Klemme Radio EIN" 0 "Klemme Radio AUS" ;
+VAL_ 466 CTR_DISP_PRG_GRB 15 "Signal ungültig" 8 "C-Programm" 4 "L-Programm" 2 "M-Programm" 1 "S-Programm" 0 "Dunkelschaltung" ;
+VAL_ 466 CTR_DISP_SPMOD_GRB 3 "Signal ungültig" 1 "Sportmodus" 0 "Normalmodus" ;
+VAL_ 466 CTR_DISP_FRM_DRVLG 15 "Signal ungültig" 6 "An, 6 Segmente" 5 "An, 5 Segmente" 0 "Dunkelschaltung" ;
+VAL_ 466 CTR_DISP_DRVLG 15 "Signal ungültig" 6 "6" 5 "5" 4 "4" 3 "3" 2 "2" 1 "1" 0 "Dunkelschaltung" ;
+VAL_ 466 ALIV_COU_EGS 14 "Zählerstand 14" 13 "Zählerstand 13" 12 "Zählerstand 12" 11 "Zählerstand 11" 10 "Zählerstand 10" 9 "Zählerstand 9" 8 "Zählerstand 8" 7 "Zählerstand 7" 6 "Zählerstand 6" 5 "Zählerstand 5" 4 "Zählerstand 4" 3 "Zählerstand 3" 2 "Zählerstand 2" 1 "Zählerstand 1" 0 "Zählerstand 0" 15 "Signal ungültig" ;
+VAL_ 466 CTR_DISP_GR_GRB 15 "Signal ungültig" 12 "8.Gang" 11 "7.Gang" 10 "6.Gang" 9 "5.Gang" 8 "4.Gang" 7 "3.Gang" 6 "2.Gang" 5 "1.Gang" 0 "Dunkelschaltung" ;
+VAL_ 466 CTR_DISP_PO_GRB_COMP 14 "P (Anzeige dauerhaft)" 13 "R" 8 "N_5min" 7 "D" 11 "N" 9 "N_30,5min" 15 "Dunkelschaltung (aus)" 12 "P_30sec" 0 "Signal ungültig" ;
+VAL_ 466 CTR_DISP_PO_GRB 15 "Signal ungültig" 8 "D" 7 "N_5min" 6 "N_30,5min" 4 "N" 3 "P_30sec" 2 "R" 1 "P (Anzeige dauerhaft)" 0 "Dunkelschaltung (aus)" ;
+VAL_ 192 ALIV_COU_ZGM 15 "Signal ungültig" 14 "Zählerstand 14" 13 "Zählerstand 13" 12 "Zählerstand 12" 11 "Zählerstand 11" 10 "Zählerstand 10" 9 "Zählerstand 9" 8 "Zählerstand 8" 7 "Zählerstand 7" 6 "Zählerstand 6" 5 "Zählerstand 5" 4 "Zählerstand 4" 3 "Zählerstand 3" 2 "Zählerstand 2" 1 "Zählerstand 1" 0 "Zählerstand 0" ;
+VAL_ Env_ST_IDLG_ENG 3 "Signal ungültig" 1 "Motor nicht im Leerlauf" 0 "Leerlauf" ;
+VAL_ Env_ST_VEH_DVCO 7 "Signal ungültig" 3 "Fahrzeug fährt " 2 "Fahrzeug fährt rückwärts" 1 "Fahrzeug fährt vorwärts" 0 "Fahrzeug steht" ;
+VAL_ Env_SW_BLTB_DRR 2 "Signal ungültig" 1 "Gurt angelegt" 0 "Gurt nicht angelegt" ;
+VAL_ Env_SW_BLTB_PSR 2 "Signal ungültig" 1 "Gurt angelegt" 0 "Gurt nicht angelegt" ;
+VAL_ Env_ST_IDC_KI 3 "Signal ungültig" 1 "Blinkkontroll AUS" 0 "Bkontroll signalisieren Bzyklus" ;
+VAL_ Env_ST_IDC_STOP 3 "Signal ungültig" 2 "Neuen Blinktakt starten" 1 "Synchronisation" 0 "Blinktakt läuft weiter" ;
+VAL_ Env_ST_IDC 7 "Signal ungültig" 3 "Beide Blinker EIN" 2 "Blinker rechts EIN" 1 "Blinker links EIN" 0 "Beide Blinker AUS" ;
+VAL_ Env_CCLK_IDC 15 "Signal ungültig" 3 "Doppel-Blink-Impuls" 2 "Defekt-Blinktakt" 1 "Normal-Blinktakt" 0 "Beide Blinker AUS" ;
+VAL_ Env_ST_KEY_PLGD 3 "Signal ungültig" 2 "Signal unplausibel" 1 "Schlüssel steckt im ZAS" 0 "Kein Schlüssel im ZAS" ;
+VAL_ Env_ST_KL_50 3 "Signal ungültig" 2 "ANLASSER nicht freigegeben" 1 "Klemme 50 EIN" 0 "Klemme 50 AUS" ;
+VAL_ Env_ST_KL_R 3 "Signal ungültig" 2 "Reserviert" 1 "Klemme Radio EIN" 0 "Klemme Radio AUS" ;
+VAL_ Env_ST_KL_15 3 "Signal ungültig" 2 "Reserviert" 1 "Klemme 15 EIN" 0 "Klemme 15 AUS" ;
+VAL_ Env_CTR_DISP_FRM_DRVLG 15 "Signal ungültig" 6 "An, 6 Segmente" 5 "An, 5 Segmente" 0 "Dunkelschaltung" ;
+VAL_ Env_CTR_DISP_DRVLG 15 "Signal ungültig" 6 "6" 5 "5" 4 "4" 3 "3" 2 "2" 1 "1" 0 "Dunkelschaltung" ;
+VAL_ Env_CTR_DISP_PRG_GRB 15 "Signal ungültig" 8 "C-Programm" 4 "L-Programm" 2 "M-Programm" 1 "S-Programm" 0 "Dunkelschaltung" ;
+VAL_ Env_CTR_DISP_SPMOD_GRB 3 "Signal ungültig" 1 "Sportmodus" 0 "Normalmodus" ;
+VAL_ Env_CTR_DISP_GR_GRB 15 "Signal ungültig" 12 "8.Gang" 11 "7.Gang" 10 "6.Gang" 9 "5.Gang" 8 "4.Gang" 7 "3.Gang" 6 "2.Gang" 5 "1.Gang" 0 "Dunkelschaltung" ;
+VAL_ Env_CTR_DISP_PO_GRB_COMP 14 "P (Anzeige dauerhaft)" 13 "R" 8 "N_5min" 7 "D" 11 "N" 9 "N_30,5min" 15 "Dunkelschaltung (aus)" 12 "P_30sec" 0 "Signal ungültig" ;
+VAL_ Env_CTR_DISP_PO_GRB 15 "Signal ungültig" 8 "D" 7 "N_5min" 6 "N_30,5min" 4 "N" 3 "P_30sec" 2 "R" 1 "P (Anzeige dauerhaft)" 0 "Dunkelschaltung (aus)" ;
+

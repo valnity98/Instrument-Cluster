@@ -36,6 +36,16 @@ BS_:
 BU_: DDE DSC_CT ACSM CIC FRMFA CAS DKG Kombi JBBF
 
 
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ STWT_SEC : 0|8@1+ (1,0) [0|59] "s" Vector__XXX
+
+BO_ 698 Stoppuhr: 5 Vector__XXX
+ SG_ STWT_SEC : 16|8@1+ (1,0) [0|59] "s" Vector__XXX
+ SG_ ST_STWT : 36|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ STWT_MS : 24|12@1+ (1,0) [0|4094] "ms" Vector__XXX
+ SG_ STWT_MN : 8|8@1+ (1,0) [0|59] "min" Vector__XXX
+ SG_ STWT_HR : 0|8@1+ (1,0) [0|99] "h" Vector__XXX
+
 BO_ 170 TORQUE: 8 DDE
  SG_ ST_IDLG_ENG : 50|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ RPM_ENG : 32|16@1+ (0.25,0) [0|16383.75] "" Vector__XXX
@@ -149,6 +159,7 @@ EV_ Env_CTR_DISP_PO_GRB_COMP: 0 [1|15] "" 1 22 DUMMY_NODE_VECTOR0  DKG;
 
 EV_ Env_CTR_DISP_PO_GRB: 0 [0|15] "" 0 23 DUMMY_NODE_VECTOR0  DKG;
 
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
 CM_ SG_ 304 ST_KEY_PLGD "Status Key Plugged";
 CM_ SG_ 304 ST_KL_50 "Zündschloßstellung ANLASSER";
 CM_ SG_ 304 ST_KL_15 "Zündschloßstellung Klemme 15";
@@ -203,32 +214,33 @@ BA_DEF_DEF_  "CANoeDrift" 0;
 BA_DEF_DEF_  "CANoeStartDelay" 0;
 BA_ "NodeLayerModules" BU_ DDE "";
 BA_ "NodeLayerModules" BU_ DSC_CT "";
-BA_ "NmStationAddress" BU_ ACSM 1;
 BA_ "NmNode" BU_ ACSM 1;
-BA_ "NmStationAddress" BU_ CIC 99;
+BA_ "NmStationAddress" BU_ ACSM 1;
 BA_ "NmNode" BU_ CIC 1;
-BA_ "NmNode" BU_ FRMFA 1;
+BA_ "NmStationAddress" BU_ CIC 99;
 BA_ "NmStationAddress" BU_ FRMFA 114;
-BA_ "NmNode" BU_ CAS 1;
+BA_ "NmNode" BU_ FRMFA 1;
 BA_ "NmStationAddress" BU_ CAS 64;
+BA_ "NmNode" BU_ CAS 1;
 BA_ "NodeLayerModules" BU_ DKG "";
-BA_ "NmNode" BU_ Kombi 1;
 BA_ "NmStationAddress" BU_ Kombi 96;
-BA_ "NmNode" BU_ JBBF 1;
+BA_ "NmNode" BU_ Kombi 1;
 BA_ "NmStationAddress" BU_ JBBF 0;
-BA_ "GenMsgSendType" BO_ 841 1;
+BA_ "NmNode" BU_ JBBF 1;
 BA_ "GenMsgCycleTime" BO_ 841 200;
-BA_ "GenMsgSendType" BO_ 416 1;
+BA_ "GenMsgSendType" BO_ 841 1;
 BA_ "GenMsgCycleTime" BO_ 416 100;
-BA_ "GenMsgDelayTime" BO_ 1152 20;
+BA_ "GenMsgSendType" BO_ 416 1;
 BA_ "NmMessage" BO_ 1152 1;
-BA_ "GenMsgCycleTime" BO_ 304 100;
-BA_ "GenMsgDelayTime" BO_ 304 50;
+BA_ "GenMsgDelayTime" BO_ 1152 20;
 BA_ "GenMsgSendType" BO_ 304 1;
+BA_ "GenMsgDelayTime" BO_ 304 50;
+BA_ "GenMsgCycleTime" BO_ 304 100;
 BA_ "GenMsgSendType" BO_ 466 1;
-BA_ "GenMsgCycleTime" BO_ 192 200;
 BA_ "GenMsgSendType" BO_ 192 1;
+BA_ "GenMsgCycleTime" BO_ 192 200;
 BA_ "GenSigCycleTime" SG_ 192 ALIV_COU_ZGM 200;
+VAL_ 698 ST_STWT 15 "Description for the value '0x3'" 2 "Zwischenzeit 1" 1 "Stoppuhr gestoppt" 0 "Stoppuhr läuft" ;
 VAL_ 170 ST_IDLG_ENG 3 "Signal ungültig" 1 "Motor nicht im Leerlauf" 0 "Leerlauf" ;
 VAL_ 841 ERR_SEN_FLLV_FUTA_RH 15 "Signal ungültig" 7 "Wert unterhalb Wertebereich" 6 "Wert unterhalb Wertebereich" 5 "Plausibilitätsfehler" 4 "Plausibilitätsfehler" 3 "Leitungsunterbrechung" 2 "Kurzschluss gegen Ubatt" 1 "Kurzschluss gegen Masse" 0 "Sensor in Ordnung" ;
 VAL_ 841 ERR_SEN_FLLV_FUTA_LH 15 "Signal ungültig" 7 "Wert unterhalb Wertebereich" 6 "Wert unterhalb Wertebereich" 5 "Plausibilitätsfehler" 4 "Plausibilitätsfehler" 3 "Leitungsunterbrechung" 2 "Kurzschluss gegen Ubatt" 1 "Kurzschluss gegen Masse" 0 "Sensor in Ordnung" ;

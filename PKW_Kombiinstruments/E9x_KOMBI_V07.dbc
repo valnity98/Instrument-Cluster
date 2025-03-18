@@ -34,21 +34,37 @@ NS_ :
 BS_:
 
 BU_: DDE DSC_CT ACSM CIC FRMFA CAS DKG Kombi JBBF
+VAL_TABLE_ ST_MAB_ASST 2 "Signal ungültig" 1 "Ein" 0 "Aus" ;
+VAL_TABLE_ ST_RFLI 1 "Ein" 0 "Aus" ;
 
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ STWT_SEC : 0|8@1+ (1,0) [0|59] "s" Vector__XXX
 
+BO_ 538 Lampenzustand: 3 FRMFA
+ SG_ ST_MAB_ASST : 18|2@1+ (1,0) [0|0] ""  Kombi
+ SG_ ST_RFLI : 6|1@1+ (1,0) [0|0] ""  Kombi
+ SG_ ST_FFLI : 5|1@1+ (1,0) [0|0] ""  Kombi
+ SG_ ST_POLI : 2|1@1+ (1,0) [0|0] ""  Kombi
+ SG_ ST_MBHF : 1|1@1+ (1,0) [0|0] ""  Kombi
+
+BO_ 373 Anzeige_Motordaten: 3 DDE
+ SG_ DISP_RPM_ENG : 8|16@1+ (0.25,0) [0|12000] "1/min"  Kombi
+ SG_ ALIV_DISP_ENGDAT : 0|4@1+ (1,0) [0|0] ""  Kombi
+
+BO_ 494 Lenkstockstaster: 2 FRMFA
+ SG_ OP_COLS : 0|8@1+ (1,0) [0|0] ""  Kombi
+
 BO_ 698 Stoppuhr: 5 Vector__XXX
- SG_ STWT_SEC : 16|8@1+ (1,0) [0|59] "s" Vector__XXX
- SG_ ST_STWT : 36|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ STWT_MS : 24|12@1+ (1,0) [0|4094] "ms" Vector__XXX
- SG_ STWT_MN : 8|8@1+ (1,0) [0|59] "min" Vector__XXX
- SG_ STWT_HR : 0|8@1+ (1,0) [0|99] "h" Vector__XXX
+ SG_ STWT_SEC : 16|8@1+ (1,0) [0|59] "s"  CIC
+ SG_ ST_STWT : 36|4@1+ (1,0) [0|15] ""  CIC
+ SG_ STWT_MS : 24|12@1+ (1,0) [0|4094] "ms"  CIC
+ SG_ STWT_MN : 8|8@1+ (1,0) [0|59] "min"  CIC
+ SG_ STWT_HR : 0|8@1+ (1,0) [0|99] "h"  CIC
 
 BO_ 170 TORQUE: 8 DDE
- SG_ ST_IDLG_ENG : 50|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ RPM_ENG : 32|16@1+ (0.25,0) [0|16383.75] "" Vector__XXX
+ SG_ ST_IDLG_ENG : 50|2@1+ (1,0) [0|3] ""  Kombi
+ SG_ RPM_ENG : 32|16@1+ (0.25,0) [0|16383.75] ""  Kombi
 
 BO_ 841 RAW_DATA_TANK: 5 JBBF
  SG_ ERR_SEN_FLLV_FUTA_RH : 36|4@1+ (1,0) [0|15] ""  Kombi
@@ -214,32 +230,39 @@ BA_DEF_DEF_  "CANoeDrift" 0;
 BA_DEF_DEF_  "CANoeStartDelay" 0;
 BA_ "NodeLayerModules" BU_ DDE "";
 BA_ "NodeLayerModules" BU_ DSC_CT "";
-BA_ "NmNode" BU_ ACSM 1;
 BA_ "NmStationAddress" BU_ ACSM 1;
-BA_ "NmNode" BU_ CIC 1;
+BA_ "NmNode" BU_ ACSM 1;
 BA_ "NmStationAddress" BU_ CIC 99;
-BA_ "NmStationAddress" BU_ FRMFA 114;
+BA_ "NmNode" BU_ CIC 1;
 BA_ "NmNode" BU_ FRMFA 1;
-BA_ "NmStationAddress" BU_ CAS 64;
+BA_ "NmStationAddress" BU_ FRMFA 114;
 BA_ "NmNode" BU_ CAS 1;
+BA_ "NmStationAddress" BU_ CAS 64;
 BA_ "NodeLayerModules" BU_ DKG "";
-BA_ "NmStationAddress" BU_ Kombi 96;
 BA_ "NmNode" BU_ Kombi 1;
-BA_ "NmStationAddress" BU_ JBBF 0;
+BA_ "NmStationAddress" BU_ Kombi 96;
 BA_ "NmNode" BU_ JBBF 1;
-BA_ "GenMsgCycleTime" BO_ 841 200;
+BA_ "NmStationAddress" BU_ JBBF 0;
+BA_ "GenMsgCycleTime" BO_ 494 1000;
+BA_ "GenMsgCycleTime" BO_ 170 100;
 BA_ "GenMsgSendType" BO_ 841 1;
-BA_ "GenMsgCycleTime" BO_ 416 100;
+BA_ "GenMsgCycleTime" BO_ 841 200;
 BA_ "GenMsgSendType" BO_ 416 1;
-BA_ "NmMessage" BO_ 1152 1;
+BA_ "GenMsgCycleTime" BO_ 416 100;
 BA_ "GenMsgDelayTime" BO_ 1152 20;
-BA_ "GenMsgSendType" BO_ 304 1;
-BA_ "GenMsgDelayTime" BO_ 304 50;
+BA_ "NmMessage" BO_ 1152 1;
 BA_ "GenMsgCycleTime" BO_ 304 100;
+BA_ "GenMsgDelayTime" BO_ 304 50;
+BA_ "GenMsgSendType" BO_ 304 1;
 BA_ "GenMsgSendType" BO_ 466 1;
-BA_ "GenMsgSendType" BO_ 192 1;
 BA_ "GenMsgCycleTime" BO_ 192 200;
+BA_ "GenMsgSendType" BO_ 192 1;
 BA_ "GenSigCycleTime" SG_ 192 ALIV_COU_ZGM 200;
+VAL_ 538 ST_MAB_ASST 2 "Signal ungültig" 1 "Ein" 0 "Aus" ;
+VAL_ 538 ST_RFLI 1 "Ein" 0 "Aus" ;
+VAL_ 538 ST_FFLI 1 "Ein" 0 "Aus" ;
+VAL_ 538 ST_POLI 1 "Ein" 0 "Aus" ;
+VAL_ 538 ST_MBHF 1 "Ein" 0 "Aus" ;
 VAL_ 698 ST_STWT 15 "Description for the value '0x3'" 2 "Zwischenzeit 1" 1 "Stoppuhr gestoppt" 0 "Stoppuhr läuft" ;
 VAL_ 170 ST_IDLG_ENG 3 "Signal ungültig" 1 "Motor nicht im Leerlauf" 0 "Leerlauf" ;
 VAL_ 841 ERR_SEN_FLLV_FUTA_RH 15 "Signal ungültig" 7 "Wert unterhalb Wertebereich" 6 "Wert unterhalb Wertebereich" 5 "Plausibilitätsfehler" 4 "Plausibilitätsfehler" 3 "Leitungsunterbrechung" 2 "Kurzschluss gegen Ubatt" 1 "Kurzschluss gegen Masse" 0 "Sensor in Ordnung" ;

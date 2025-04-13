@@ -11,7 +11,8 @@ Simulation of CAN messages via Matlab/Simulink for communication with the instru
 
 # Technologies Used
 CAN Bus Communication
-MATLAB/Simulink (Vehicle Network Toolbox)
+MATLAB/Simulink  Package:(Vehicle Network Toolbox)
+Matlab Version 2024b
 
 # Contributors
 Mutasem Bader
@@ -19,5 +20,4 @@ Mutasem Bader
 # License
 This software is proprietary and confidential. Unauthorized copying, distribution, or modification is prohibited.
 
-# Contact
-For questions or contributions, feel free to contact me via GitHub.
+

@@ -1,8 +1,10 @@
-# Instrument Cluster — CAN Bus Simulation
+# Instrument Cluster — CAN Bus Simulation (Only Simulation)
 
-**MATLAB/Simulink simulation of CAN messages for a BMW E9x instrument cluster**
+> ⚠️ **This project is no longer maintained.** The repository is archived for reference only.
 
-This project simulates the CAN bus signals required to drive the instrument cluster of a BMW E9x (E90/E91/E92/E93) series vehicle. Signals are defined in a DBC file and transmitted via MATLAB's Vehicle Network Toolbox, enabling hardware-in-the-loop (HIL) testing without a real vehicle.
+**MATLAB/Simulink simulation of CAN messages for a BMW E9x instrument cluster.**
+
+Developed as part of the Master's course *Embedded systems and networking of mechatronic systems* (Mechatronics & Robotics, Frankfurt UAS, WiSe 2024/2025).
 
 ![Instrument Cluster](Image/Instrument-cluster.png)
 
@@ -17,16 +19,7 @@ This project simulates the CAN bus signals required to drive the instrument clus
 
 ---
 
-## Technical Overview
-
-| Layer | Technology |
-|---|---|
-| Signal definition | DBC file (`E9x_KOMBI_V07.dbc`) |
-| Simulation model | MATLAB/Simulink (`Sim_Signale.slx`) |
-| CAN transmission | MATLAB Vehicle Network Toolbox |
-| Project management | MATLAB Project (`.prj`) |
-
-### Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────┐
@@ -48,6 +41,17 @@ This project simulates the CAN bus signals required to drive the instrument clus
 │  BMW E9x Instrument Cluster  │  (target hardware)
 └──────────────────────────────┘
 ```
+
+---
+
+## Technical Overview
+
+| Layer | Technology |
+|---|---|
+| Signal definition | DBC file (`E9x_KOMBI_V07.dbc`) |
+| Simulation model | MATLAB/Simulink (`Sim_Signale.slx`) |
+| CAN transmission | MATLAB Vehicle Network Toolbox |
+| Project management | MATLAB Project (`.prj`) |
 
 ### DBC File
 
@@ -87,27 +91,9 @@ Instrument-Cluster/
 ├── PKW_Kombiinstruments/
 │   ├── E9x_KOMBI_V07.dbc           CAN signal database
 │   ├── PKW_Kombiinstruments.prj    MATLAB project file
-│   ├── Sim_Signale.slx             Simulink simulation model
-│   └── slprj/                      Simulink build artefacts (auto-generated)
+│   └── Sim_Signale.slx             Simulink simulation model
 └── README.md
 ```
-
-> **Note:** The `slprj/` folder contains auto-generated simulation cache files and should be added to `.gitignore`.
-
----
-
-## Future Extensions
-
-- Add wiper, door-open, and seatbelt warning signals
-- Integrate a CANoe/CANalyzer trace for validation
-- Parameterise signal profiles (speed ramp rate, RPM range) via MATLAB scripts
-- Export signal traces to `.blf` or `.asc` for replay
-
----
-
-## Contributors
-
-- Mutasem Bader
 
 ---
 
@@ -116,5 +102,3 @@ Instrument-Cluster/
 Copyright (c) 2026 Mutasem Bader — All Rights Reserved.  
 Viewing is permitted. Copying, modifying, or submitting as own work is strictly prohibited.  
 See [LICENSE](LICENSE) for details.
-  
----

@@ -77,7 +77,7 @@ A virtual CAN channel can be used for simulation without hardware.
 ## Getting Started
 
 1. Open MATLAB R2024b.
-2. Open the project file: `PKW_Kombiinstruments/simulation.prj`
+2. Open the project file: `PKW/simulation.prj`
 3. Open the Simulink model: `can-signal-sim.slx`
 4. Configure the CAN channel in the **CAN Configuration** block to match your hardware or select a virtual channel.
 5. Run the simulation (`Ctrl+T`).
@@ -91,7 +91,7 @@ Instrument-Cluster/
 ├── images/
 │   ├── instrument-cluster-hardware.png     Hardware photo
 │   └── instrument-cluster-simulation.png   Simulink model screenshot
-├── PKW_Kombiinstruments/
+├── PKW/
 │   ├── bmw-e9x-can-database.dbc            CAN signal database
 │   ├── simulation.prj                      MATLAB project file
 │   └── can-signal-sim.slx                  Simulink simulation model

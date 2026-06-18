@@ -6,7 +6,9 @@
 
 Developed as part of the Master's course *Embedded systems and networking of mechatronic systems* (Mechatronics & Robotics, Frankfurt UAS, WiSe 2024/2025).
 
-![Instrument Cluster](Image/Instrument-cluster.png)
+| Hardware | Simulation |
+|---|---|
+| ![Hardware](images/instrument-cluster-hardware.png) | ![Simulation](images/instrument-cluster-simulation.png) |
 
 ---
 
@@ -23,7 +25,7 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 ```
 ┌─────────────────────────────┐
-│  Simulink Signal Generator  │  (Sim_Signale.slx)
+│  Simulink Signal Generator  │  (can-signal-sim.slx)
 │  - Speed ramp               │
 │  - RPM sine wave            │
 │  - Fuel level step          │
@@ -48,14 +50,14 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 | Layer | Technology |
 |---|---|
-| Signal definition | DBC file (`E9x_KOMBI_V07.dbc`) |
-| Simulation model | MATLAB/Simulink (`Sim_Signale.slx`) |
+| Signal definition | DBC file (`bmw-e9x-can-database.dbc`) |
+| Simulation model | MATLAB/Simulink (`can-signal-sim.slx`) |
 | CAN transmission | MATLAB Vehicle Network Toolbox |
-| Project management | MATLAB Project (`.prj`) |
+| Project management | MATLAB Project (`simulation.prj`) |
 
 ### DBC File
 
-The `E9x_KOMBI_V07.dbc` file defines all CAN messages and signals for the BMW KOMBI (Kombiinstrument). Key signals include speedometer, tachometer, fuel gauge, coolant temperature, and indicator lamps.
+The `bmw-e9x-can-database.dbc` file defines all CAN messages and signals for the BMW KOMBI (Kombiinstrument). Key signals include speedometer, tachometer, fuel gauge, coolant temperature, and indicator lamps.
 
 ---
 
@@ -75,8 +77,8 @@ A virtual CAN channel can be used for simulation without hardware.
 ## Getting Started
 
 1. Open MATLAB R2024b.
-2. Open the project file: `PKW_Kombiinstruments/PKW_Kombiinstruments.prj`
-3. Open the Simulink model: `Sim_Signale.slx`
+2. Open the project file: `PKW_Kombiinstruments/simulation.prj`
+3. Open the Simulink model: `can-signal-sim.slx`
 4. Configure the CAN channel in the **CAN Configuration** block to match your hardware or select a virtual channel.
 5. Run the simulation (`Ctrl+T`).
 
@@ -86,12 +88,13 @@ A virtual CAN channel can be used for simulation without hardware.
 
 ```
 Instrument-Cluster/
-├── Image/
-│   └── Instrument-cluster.png      Hardware photo
+├── images/
+│   ├── instrument-cluster-hardware.png     Hardware photo
+│   └── instrument-cluster-simulation.png   Simulink model screenshot
 ├── PKW_Kombiinstruments/
-│   ├── E9x_KOMBI_V07.dbc           CAN signal database
-│   ├── PKW_Kombiinstruments.prj    MATLAB project file
-│   └── Sim_Signale.slx             Simulink simulation model
+│   ├── bmw-e9x-can-database.dbc            CAN signal database
+│   ├── simulation.prj                      MATLAB project file
+│   └── can-signal-sim.slx                  Simulink simulation model
 └── README.md
 ```
 

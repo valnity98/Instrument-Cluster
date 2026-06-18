@@ -1,0 +1,10 @@
+﻿# MATLAB / Simulink build artifacts
+slprj/
+*.slxc
+*.autosave
+*.mex*
+*.asv
+
+# MATLAB cache
+resources/project/
+

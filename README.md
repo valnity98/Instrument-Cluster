@@ -4,7 +4,7 @@
 
 **MATLAB/Simulink simulation of CAN messages for a BMW E9x instrument cluster.**
 
-Developed as part of the Master's course *Embedded Systems und Vernetzung mechatronischer Systeme* (Mechatronics & Robotics, Frankfurt UAS, WiSe 2024/2025).
+Developed as part of the Master's course *Embedded systems and networking of mechatronic systems* (Mechatronics & Robotics, Frankfurt UAS, WiSe 2024/2025).
 
 ![Instrument Cluster](Image/Instrument-cluster.png)
 

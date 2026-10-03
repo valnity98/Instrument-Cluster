@@ -1,14 +1,14 @@
-# Instrument Cluster — CAN Bus Simulation (Only Simulation)
+# Instrument Cluster — CAN Bus Control
 
 > **Status: completed.** University project (WiSe 2024/25), kept as a reference implementation.
 
-**MATLAB/Simulink simulation of CAN messages for a BMW E9x instrument cluster.**
+**MATLAB/Simulink model and DBC file to drive a real BMW E9x instrument cluster over CAN.**
 
 Developed as part of the Master's course *Embedded systems and networking of mechatronic systems* (Mechatronics & Robotics, Frankfurt UAS, WiSe 2024/2025).
 
-**Team project.** My part: signal modelling and simulation (DBC file, Simulink CAN model, validation in the CAN Explorer).
+**Team project.** My part: signal modelling and control of the cluster over CAN (DBC file, Simulink CAN model, validation in the CAN Explorer on the real cluster).
 
-| Hardware | Simulation |
+| Instrument cluster | Simulink model |
 |---|---|
 | ![Hardware](images/instrument-cluster-hardware.png) | ![Simulation](images/instrument-cluster-simulation.png) |
 
@@ -16,7 +16,7 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 ## Project Goals
 
-- Simulate a functional instrument cluster using real CAN message definitions
+- Drive a functional instrument cluster with real CAN message definitions
 - Create and maintain a `.dbc` file covering all relevant cluster signals
 - Generate realistic signal waveforms from a MATLAB/Simulink model
 - Provide an extensible architecture for adding new signals
@@ -42,7 +42,7 @@ Developed as part of the Master's course *Embedded systems and networking of mec
                │ Physical / virtual CAN bus
                ▼
 ┌──────────────────────────────┐
-│  BMW E9x Instrument Cluster  │  (target hardware)
+│  BMW E9x Instrument Cluster  │  (real hardware)
 └──────────────────────────────┘
 ```
 
@@ -53,7 +53,7 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 | Layer | Technology |
 |---|---|
 | Signal definition | DBC file (`bmw-e9x-can-database.dbc`) |
-| Simulation model | MATLAB/Simulink (`can-signal-sim.slx`) |
+| Signal model | MATLAB/Simulink (`can-signal-sim.slx`) |
 | CAN transmission | MATLAB Vehicle Network Toolbox |
 | Project management | MATLAB Project (`simulation.prj`) |
 
@@ -70,9 +70,9 @@ The `bmw-e9x-can-database.dbc` file defines all CAN messages and signals for the
 | MATLAB | R2024b |
 | Simulink | R2024b |
 | Vehicle Network Toolbox | R2024b |
-| CAN hardware (optional) | Peak PCAN, IXXAT, or Vector CANcase |
+| CAN interface | Any interface supported by the Vehicle Network Toolbox (e.g. Peak PCAN, IXXAT, Vector) |
 
-A virtual CAN channel can be used for simulation without hardware.
+For the real cluster a CAN interface is required; a virtual CAN channel can be used to test the model without hardware.
 
 ---
 
@@ -82,7 +82,7 @@ A virtual CAN channel can be used for simulation without hardware.
 2. Open the project file: `PKW/simulation.prj`
 3. Open the Simulink model: `can-signal-sim.slx`
 4. Configure the CAN channel in the **CAN Configuration** block to match your hardware or select a virtual channel.
-5. Run the simulation (`Ctrl+T`).
+5. Run the model (`Ctrl+T`).
 
 ---
 
@@ -91,12 +91,12 @@ A virtual CAN channel can be used for simulation without hardware.
 ```
 Instrument-Cluster/
 ├── images/
-│   ├── instrument-cluster-hardware.png     Hardware photo
+│   ├── instrument-cluster-hardware.png     Instrument cluster image
 │   └── instrument-cluster-simulation.png   Simulink model screenshot
 ├── PKW/
 │   ├── bmw-e9x-can-database.dbc            CAN signal database
 │   ├── simulation.prj                      MATLAB project file
-│   └── can-signal-sim.slx                  Simulink simulation model
+│   └── can-signal-sim.slx                  Simulink model
 └── README.md
 ```
 

@@ -1,10 +1,12 @@
 # Instrument Cluster — CAN Bus Simulation (Only Simulation)
 
-> ⚠️ **This project is no longer maintained.** The repository is archived for reference only.
+> **Status: completed.** University project (WiSe 2024/25), kept as a reference implementation.
 
 **MATLAB/Simulink simulation of CAN messages for a BMW E9x instrument cluster.**
 
 Developed as part of the Master's course *Embedded systems and networking of mechatronic systems* (Mechatronics & Robotics, Frankfurt UAS, WiSe 2024/2025).
+
+**Team project.** My part: signal modelling and simulation (DBC file, Simulink CAN model, validation in the CAN Explorer).
 
 | Hardware | Simulation |
 |---|---|

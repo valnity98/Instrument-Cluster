@@ -10,7 +10,9 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 | Instrument cluster | Simulink model |
 |---|---|
-| ![Hardware](images/instrument-cluster-hardware.png) | ![Simulation](images/instrument-cluster-simulation.png) |
+| ![Instrument cluster (illustration)](images/instrument-cluster-hardware.png) | ![Simulink model](images/instrument-cluster-simulation.png) |
+
+*Left: illustration of a BMW E9x instrument cluster (stock image, not a photo of the project setup). Right: excerpt of the Simulink model.*
 
 ---
 
@@ -18,7 +20,7 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 - Drive a functional instrument cluster with real CAN message definitions
 - Create and maintain a `.dbc` file covering all relevant cluster signals
-- Generate realistic signal waveforms from a MATLAB/Simulink model
+- Control the cluster signals interactively from a Simulink dashboard (sliders, switches, combo boxes, gauges)
 - Provide an extensible architecture for adding new signals
 
 ---
@@ -27,13 +29,12 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 ```
 ┌─────────────────────────────┐
-│  Simulink Signal Generator  │  (can-signal-sim.slx)
-│  - Speed ramp               │
-│  - RPM sine wave            │
-│  - Fuel level step          │
-│  - Temperature, indicators  │
+│  Simulink dashboard         │  (can-signal-sim.slx)
+│  - Sliders, switches,       │
+│    combo boxes, gauges      │
+│  - Signal values set by hand│
 └──────────────┬──────────────┘
-               │ Simulink CAN Pack / CAN Write blocks
+               │ Simulink CAN Pack / CAN Transmit blocks
                ▼
 ┌──────────────────────────────┐
 │  Vehicle Network Toolbox     │  CAN channel (virtual or hardware)
@@ -59,7 +60,7 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 ### DBC File
 
-The `bmw-e9x-can-database.dbc` file defines all CAN messages and signals for the BMW KOMBI (Kombiinstrument). Key signals include speedometer, tachometer, fuel gauge, coolant temperature, and indicator lamps.
+The `bmw-e9x-can-database.dbc` file defines 14 CAN messages and their signals for the BMW KOMBI (Kombiinstrument). Key signals include vehicle speed, engine speed, indicator and warning lamps, terminal status (ignition), transmission display, seat-belt state, time and date, and raw fuel-tank sensor data.
 
 ---
 
@@ -81,7 +82,7 @@ For the real cluster a CAN interface is required; a virtual CAN channel can be u
 1. Open MATLAB R2024b.
 2. Open the project file: `PKW/simulation.prj`
 3. Open the Simulink model: `can-signal-sim.slx`
-4. Configure the CAN channel in the **CAN Configuration** block to match your hardware or select a virtual channel.
+4. Configure the CAN channel in the **CAN Configuration** block. The model is saved with the MathWorks virtual CAN channel; select your CAN device to drive a real cluster. If MATLAB reports a missing DBC file, point the **CAN Pack** blocks to `PKW/bmw-e9x-can-database.dbc`.
 5. Run the model (`Ctrl+T`).
 
 ---
@@ -91,7 +92,7 @@ For the real cluster a CAN interface is required; a virtual CAN channel can be u
 ```
 Instrument-Cluster/
 ├── images/
-│   ├── instrument-cluster-hardware.png     Instrument cluster image
+│   ├── instrument-cluster-hardware.png     Illustration of the cluster (not the project setup)
 │   └── instrument-cluster-simulation.png   Simulink model screenshot
 ├── PKW/
 │   ├── bmw-e9x-can-database.dbc            CAN signal database

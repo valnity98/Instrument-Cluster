@@ -1,12 +1,10 @@
-# Instrument Cluster — CAN Bus Control
+# Instrument Cluster: CAN Bus Control
 
-> **Status: completed.** University project (WiSe 2024/25), kept as a reference implementation.
+A MATLAB/Simulink model and a DBC file that drive a real BMW E9x instrument cluster over CAN.
 
-**MATLAB/Simulink model and DBC file to drive a real BMW E9x instrument cluster over CAN.**
+We built this as a team in the master's course *Embedded Systems and Networking of Mechatronic Systems* at Frankfurt UAS (winter semester 2024/25). The project is finished.
 
-Developed as part of the Master's course *Embedded systems and networking of mechatronic systems* (Mechatronics & Robotics, Frankfurt UAS, WiSe 2024/2025).
-
-**Team project.** My part: signal modelling and control of the cluster over CAN (DBC file, Simulink CAN model, validation in the CAN Explorer on the real cluster).
+My part was the signal side: I wrote the DBC file, built the Simulink CAN model and checked the signals on the real cluster with the CAN Explorer.
 
 | Instrument cluster | Simulink model |
 |---|---|
@@ -14,16 +12,14 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 *Left: illustration of a BMW E9x instrument cluster (stock image, not a photo of the project setup). Right: excerpt of the Simulink model.*
 
----
+## What it does
 
-## Project Goals
+- Sends real CAN messages to the cluster, so the needles and lamps react
+- Describes the cluster signals in one `.dbc` file with 14 messages
+- Lets you set every signal by hand from a Simulink dashboard with sliders, switches, combo boxes and gauges
+- New signals can be added in the DBC file and in the model without changing the structure
 
-- Drive a functional instrument cluster with real CAN message definitions
-- Create and maintain a `.dbc` file covering all relevant cluster signals
-- Control the cluster signals interactively from a Simulink dashboard (sliders, switches, combo boxes, gauges)
-- Provide an extensible architecture for adding new signals
-
----
+On the real cluster, engine speed, vehicle speed, the turn signals and the ignition terminals were displayed correctly.
 
 ## System Architecture
 
@@ -47,8 +43,6 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 └──────────────────────────────┘
 ```
 
----
-
 ## Technical Overview
 
 | Layer | Technology |
@@ -62,8 +56,6 @@ Developed as part of the Master's course *Embedded systems and networking of mec
 
 The `bmw-e9x-can-database.dbc` file defines 14 CAN messages and their signals for the BMW KOMBI (Kombiinstrument). Key signals include vehicle speed, engine speed, indicator and warning lamps, terminal status (ignition), transmission display, seat-belt state, time and date, and raw fuel-tank sensor data.
 
----
-
 ## Requirements
 
 | Tool | Version |
@@ -75,8 +67,6 @@ The `bmw-e9x-can-database.dbc` file defines 14 CAN messages and their signals fo
 
 For the real cluster a CAN interface is required; a virtual CAN channel can be used to test the model without hardware.
 
----
-
 ## Getting Started
 
 1. Open MATLAB R2024b.
@@ -84,8 +74,6 @@ For the real cluster a CAN interface is required; a virtual CAN channel can be u
 3. Open the Simulink model: `can-signal-sim.slx`
 4. Configure the CAN channel in the **CAN Configuration** block. The model is saved with the MathWorks virtual CAN channel; select your CAN device to drive a real cluster. If MATLAB reports a missing DBC file, point the **CAN Pack** blocks to `PKW/bmw-e9x-can-database.dbc`.
 5. Run the model (`Ctrl+T`).
-
----
 
 ## Project Structure
 
@@ -101,10 +89,8 @@ Instrument-Cluster/
 └── README.md
 ```
 
----
-
 ## License
 
-Copyright (c) 2026 Mutasem Bader — All Rights Reserved.  
+Copyright (c) 2026 Mutasem Bader. All rights reserved.  
 Viewing is permitted. Copying, modifying, or submitting as own work is strictly prohibited.  
 See [LICENSE](LICENSE) for details.

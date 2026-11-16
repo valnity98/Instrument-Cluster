@@ -5,6 +5,9 @@ slprj/
 *.mex*
 *.asv
 
-# MATLAB cache
-resources/project/
+# Note: PKW/resources/project/ is NOT ignored. It holds the MATLAB project
+# definition that simulation.prj needs and must stay under version control.
 
+# OS
+.DS_Store
+Thumbs.db

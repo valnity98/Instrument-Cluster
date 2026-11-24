@@ -1,0 +1,17 @@
+# MATLAB / Simulink build artifacts
+slprj/
+*.slxc
+*.autosave
+*.mex*
+*.asv
+
+# Note: PKW/resources/project/ is NOT ignored. It holds the MATLAB project
+# definition that simulation.prj needs and must stay under version control.
+
+# OS
+.DS_Store
+Thumbs.db
+
+# local backups of the repository (kept on this machine only)
+*.bundle
+_backup*/
